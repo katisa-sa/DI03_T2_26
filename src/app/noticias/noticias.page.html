@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list *ngFor="let articulo of articulosIniciales">  
+   
+    <ion-item>
+      <ion-checkbox color="primary" slot="start" [checked]="seleccionado(articulo)" (ionChange)="modificarArticulo($event, articulo)"></ion-checkbox>
+      <ion-label>
+        <h2>{{ articulo.author}}</h2>
+        <p>{{ articulo.title}}</p>
+      </ion-label>
+    </ion-item>
+  
+  </ion-list>
+</ion-content>

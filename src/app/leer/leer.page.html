@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mis noticias</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngFor="let articulo of articulosSeleccionados">
+    <ion-item>
+      <ion-grid>
+        <app-card [articulo]="articulo"></app-card>
+        <ion-button fill="clear" [href]="articulo.url" target="_blank">
+          <ion-icon name="book-outline" style="font-size: 40px"></ion-icon>
+        </ion-button>
+        <ion-button fill="clear" (click)="presentAlert(articulo)">
+          <ion-icon name="trash-outline" slot="end" style="font-size: 40px"></ion-icon>
+        </ion-button>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+  
+</ion-content>
