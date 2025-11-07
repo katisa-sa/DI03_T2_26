@@ -2,6 +2,11 @@
   <ion-toolbar>
     <ion-title>Mis noticias</ion-title>
   </ion-toolbar>
+    <ion-segment scrollable [value]="listaCategorias[0]" (ionChange)="cambioCategoria($event)">
+    <ion-segment-button [value]="categoria" *ngFor="let categoria of listaCategorias">
+      <ion-label>{{categoria}}</ion-label>
+    </ion-segment-button>
+  </ion-segment>
 </ion-header>
 
 <ion-content [fullscreen]="true">
